@@ -1,25 +1,28 @@
 <template>
-	<main class="h-screen p-4">
-		<div class="flex flex-col items-center m-6 p-3">
-			<div class="flex flex-col justify-center items-center w-7/12">
-				<img src="../assets/img/home.jpg" alt="" />
-				<div class="w-full bg-cardBackground p-3">
-					<h1>ENGLISH</h1>
-					<h1>ITALIANO</h1>
-					<h1>UKRANIAN</h1>
+	<main>
+		<div class="grid-container">
+			<!-- vw pic -->
+			<div class="profile-picture">
+				<div class="picture-container">
+					<img src="../assets/img/home.jpg" alt="" />
+					<div class="language-section">
+						<h1>ENGLISH</h1>
+						<h1>ITALIANO</h1>
+						<h1>UKRANIAN</h1>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="grid grid-cols-2 gap-4">
-			<div class="grid grid-cols-1 auto-rows-auto space-y-5">
-				<div class="bg-cardBackground p-3">
+
+			<div class="columns-container">
+				<div class="bg-cardBackground links-container">
 					<a href="#">
 						<p>LINKS</p>
 					</a>
-					<a href="#" class="mt-3 block">
+					<a href="#" class="inline-block mt-6">
 						<p>RESUME</p>
 					</a>
-					<a href="#" class="block mb-3">
+					<br />
+					<a href="#" class="inline-block mb-6">
 						<p>PORTFOLIO</p>
 					</a>
 					<a href="#">
@@ -41,39 +44,37 @@
 						<p>ART</p>
 					</a>
 				</div>
-				<div class="bg-cardBackground p-3 h-[80px]">
-					<a href="#">
-						<p class="text-xs">CONTACT ME</p>
-					</a>
-				</div>
-				<div class="bg-cardBackground p-3">
-					<p class="text-xs">GET TO KNOW ME</p>
-
-					<p class="text-xs">I AM A UKRAINIAN</p>
-
-					<p class="text-xs">LIVING IN AMERICA</p>
-
-					<p class="text-xs">PAINTER, ARTIST, SCULPTURE</p>
-
-					<p class="text-xs">PASSIONATE ABOUT POLITICS</p>
-				</div>
-			</div>
-			<div class="grid grid-cols-1 auto-rows-auto space-y-5">
-				<div class="bg-cardBackground p-3 space-y-3">
-					<p class="text-xs">PROFESSIONAL BACKGROUND</p>
-					<ul class="text-xs">
-						<li class="text-xs">- MASTERS OF ARCHITECTURE</li>
-						<li class="text-xs">- ARCHITECTURAL DESIGNER</li>
-						<li class="text-xs">- LANDSCAPE DESIGNER</li>
-						<li class="text-xs">- ISA CERTIFIED ARBORIST</li>
-						<li class="text-xs">- OWNER OF ONE TREE ARBORIST LLC</li>
+				<div class="bg-cardBackground professional-background-container">
+					<p>PROFESSIONAL BACKGROUND</p>
+					<ul>
+						<li>- MASTERS OF ARCHITECTURE</li>
+						<li>- ARCHITECTURAL DESIGNER</li>
+						<li>- LANDSCAPE DESIGNER</li>
+						<li>- ISA CERTIFIED ARBORIST</li>
+						<li>- OWNER OF ONE TREE ARBORIST LLC</li>
 					</ul>
 				</div>
-				<div class="bg-cardBackground p-3">
-					<p class="text-xs">DONATE WITH ME TO UKRAINIAN ARMED FORCES</p>
-					<a href="#"><p class="text-xs">SAVEALIFE.UA</p></a>
+				<div class="bg-cardBackground contact-me-container">
+					<a href="#">
+						<p>CONTACT ME</p>
+					</a>
 				</div>
-				<div class="bg-cardBackground p-3">
+				<div class="bg-cardBackground donate-container xl:h-fit">
+					<p class="xl:mb-1">DONATE WITH ME TO UKRAINIAN ARMED FORCES</p>
+					<a href="#"><p>SAVEALIFE.UA</p></a>
+				</div>
+				<div class="bg-cardBackground get-to-know-me-container">
+					<p>GET TO KNOW ME</p>
+
+					<p>I AM A UKRAINIAN</p>
+
+					<p>LIVING IN AMERICA</p>
+
+					<p>PAINTER, ARTIST, SCULPTURE</p>
+
+					<p>PASSIONATE ABOUT POLITICS</p>
+				</div>
+				<div class="bg-cardBackground projects-container">
 					<p>PROJECTS</p>
 					<div>
 						<img src="../assets/img/home.jpg" alt="" />
@@ -83,5 +84,166 @@
 		</div>
 	</main>
 </template>
-<script setup lang="ts"></script>
-<style></style>
+<style scoped>
+	main {
+		padding: 1rem;
+		width: 100%;
+		height: 100vh;
+		/* overflow: hidden; */
+	}
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		font-size: 14px;
+		overflow: hidden;
+	}
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		font-size: 14px;
+	}
+
+	.profile-picture {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 1.5rem;
+		padding: 0.75rem;
+	}
+
+	.picture-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 58.333333%;
+		background-color: darkgrey;
+	}
+
+	.picture-container img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.picture-container div {
+		width: 100%;
+		background-color: #e5e7eb; /* Replace with the actual color of bg-cardBackground */
+		padding: 0.75rem;
+	}
+
+	/* columns */
+	.columns-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 1.5rem;
+	}
+
+	.columns-container div {
+		padding: 0.75rem;
+		max-width: 250px;
+	}
+
+	/* Tablet (e.g., devices with a screen width of 768px or more) */
+	@media (min-width: 768px) {
+		main {
+			background-color: lightgreen;
+			font-size: 16px;
+			/* other tablet-specific styles */
+		}
+		.grid-container {
+			position: relative;
+			height: 100%; /* Ensures grid container doesn't exceed main's height */
+		}
+		.profile-picture {
+			position: absolute;
+			top: 40%;
+			left: 47%;
+			transform: translate(-50%, -50%);
+		}
+
+		.columns-container {
+			height: 100vh;
+		}
+
+		.professional-background-container,
+		.donate-container,
+		.projects-container {
+			justify-self: end;
+		}
+	}
+
+	/* Desktop (e.g., devices with a screen width of 1024px or more) */
+	@media (min-width: 1024px) {
+		main {
+			background-color: orange;
+			font-size: 18px;
+			/* other desktop-specific styles */
+		}
+	}
+
+	/* Wide Desktop (e.g., devices with a screen width of 1200px or more) */
+	@media (min-width: 1280px) {
+		main {
+			background-color: lightcoral;
+			font-size: 20px;
+			/* other wide desktop-specific styles */
+		}
+
+		.columns-container div {
+			max-width: 400px;
+		}
+
+		.profile-picture {
+			width: 400px;
+		}
+
+		.columns-container {
+			grid-template-columns: repeat(6, 1fr);
+			grid-template-rows: repeat(4, 1fr);
+		}
+
+		.contact-me-container {
+			grid-column: 1 / 2;
+			grid-row: 4 /5;
+		}
+
+		.donate-container {
+			grid-column: 2 / 3;
+			grid-row: 3 / 4;
+		}
+
+		.projects-container {
+			grid-column: 5 / 7;
+			grid-row: 1 / 2;
+			max-width: 0;
+		}
+
+		.professional-background-container {
+			height: fit-content;
+		}
+
+		.get-to-know-me-container {
+			grid-column: 6 / 7;
+			grid-row: 3 /4;
+		}
+
+		.links-container {
+			height: fit-content;
+		}
+	}
+
+	@media (min-width: 2000px) {
+		main {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: magenta;
+		}
+
+		.grid-container {
+			max-width: 80%;
+		}
+	}
+</style>

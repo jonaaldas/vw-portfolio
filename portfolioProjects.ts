@@ -1,4 +1,17 @@
-export default [
+interface Project {
+	id: number;
+	title: string;
+	description: string;
+	image: string;
+}
+
+interface PortfolioCategory {
+	id: number;
+	title: string;
+	projects: Project[];
+}
+
+const portfolioProjects: PortfolioCategory[] = [
 	{
 		id: 1,
 		title: 'LANDSCAPE ARCHITECTURE PROJECTS',
@@ -123,3 +136,5 @@ export default [
 		]
 	}
 ];
+
+export default portfolioProjects;

@@ -1,21 +1,21 @@
 <template>
-	<div>
-		<Navbar pageName="PAGE" />
-		<div>
-			<h1>Portfolio</h1>
+	<Navbar pageName="PORTFOLIO" />
+	<div class="3xl:flex 3xl:justify-center">
+		<div class="mt-28 3xl:container">
 			<div v-for="projects in portfolioProjects" :key="projects.id">
-				<h2>{{ projects.title }}</h2>
+				<h3 class="mb-4 ml-4 text-xs">{{ projects.title }}</h3>
 				<Carousel :itemsToShow="numberOfSlide">
 					<Slide v-for="project in projects.projects" :key="project.id">
-						<div class="flex flex-col gap-2 group">
+						<router-link :to="`/portfolio/${projects.category}/${project.title}`">
+						<div class="flex flex-col group mx-5">
 							<div class="relative">
-								<p class="hidden group-hover:block absolute inset-0 bg-white text-black p-2 rounded-md flex items-center justify-center mx-12">
-									{{ project.title }}
-									{{ project.description }}
+								<p class="hidden group-hover:block absolute inset-0 bg-white text-black p-2 rounded-md flex items-center justify-center mx-12 flex-col">
+									<div class="text-sm">{{ project.title }}</div>
 								</p>
-								<img :src="project.image" :alt="project.title" class="group-hover:opacity-0" />
+								<img :src="project.images[0]" :alt="project.title" class="group-hover:opacity-0" />
 							</div>
 						</div>
+						</router-link>
 					</Slide>
 					<template #addons>
 						<Navigation />
@@ -47,7 +47,7 @@
 			} else if (screenSize.value < 1024) {
 				numberOfSlide.value = 3;
 			} else {
-				numberOfSlide.value = 4;
+				numberOfSlide.value = 4
 			}
 		},
 		{immediate: true}

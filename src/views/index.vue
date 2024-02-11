@@ -18,13 +18,13 @@
 					<a href="#">
 						<p>LINKS</p>
 					</a>
-					<a href="#" class="inline-block mt-6">
+					<router-link to="/resume" class="inline-block mt-6">
 						<p>RESUME</p>
-					</a>
+					</router-link>
 					<br />
-					<a href="#" class="inline-block mb-6">
+					<router-link to="/portfolio" class="inline-block mb-6">
 						<p>PORTFOLIO</p>
-					</a>
+					</router-link>
 					<a href="#">
 						<p>GENOA</p>
 					</a>

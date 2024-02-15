@@ -25,12 +25,12 @@
 					<router-link to="/portfolio" class="inline-block mb-6">
 						<p>PORTFOLIO</p>
 					</router-link>
-					<a href="#">
+					<router-link to="/genoa">
 						<p>GENOA</p>
-					</a>
-					<a href="#">
+					</router-link>
+					<router-link to="/germany">
 						<p>BAUHAUS</p>
-					</a>
+					</router-link>
 					<a href="#">
 						<p>MIAMI</p>
 					</a>

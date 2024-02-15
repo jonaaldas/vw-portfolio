@@ -34,13 +34,13 @@
 				</Carousel>
 
 				<div class="md:flex gap-2 space-y-3 md:space-y-0">
-					<div class="bg-cardBackground p-2">
+					<div class="bg-cardBackground p-2 md:w-3/5">
 						<h1 class="text-lg">Project description</h1>
 						<ul v-for="description in filteredProjectData.projectDescription">
 							<li class="text-sm">{{ description }}</li>
 						</ul>
 					</div>
-					<div class="bg-cardBackground p-2">
+					<div class="bg-cardBackground p-2 md:w-2/5">
 						<h1 class="text-lg">Software Used</h1>
 						<ul v-for="software in filteredProjectData.softwareUser">
 							<li class="text-sm">{{ software }}</li>

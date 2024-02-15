@@ -22,6 +22,16 @@ const router = createRouter({
 			path: '/resume',
 			name: 'Resume',
 			component: () => import('../views/resume.vue')
+		},
+		{
+			path: '/genoa',
+			name: 'Genoa',
+			component: () => import('../views/genoa.vue')
+		},
+		{
+			path: '/germany',
+			name: 'Germany',
+			component: () => import('../views/germany.vue')
 		}
 	]
 });

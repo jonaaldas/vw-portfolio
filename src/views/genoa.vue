@@ -100,7 +100,7 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lnag="ts">
 	import Navbar from '../components/navbar.vue';
 	import 'vue3-carousel/dist/carousel.css';
 	import {Carousel, Slide, Navigation} from 'vue3-carousel';

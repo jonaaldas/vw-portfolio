@@ -1,5 +1,5 @@
 <template>
-	<Navbar pageName="PORTFOLIO" :subName="portfolioName" />
+	<Navbar pageName="PORTFOLIO" :subName="portfolioName.toString()" />
 	<div class="mt-4 p-1 3xl:flex 3xl:justify-center">
 		<div class="space-y-3 md:flex md:flex-row md:space-y-0 md:space-x-3 3xl:container">
 			<div class="space-y-3 md:w-1/3">

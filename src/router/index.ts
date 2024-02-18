@@ -32,8 +32,19 @@ const router = createRouter({
 			path: '/germany',
 			name: 'Germany',
 			component: () => import('../views/germany.vue')
+		},
+		{
+			path: '/my_portfolio',
+			name: 'my Portfolio',
+			component: () => import('../views/my_portfolio.vue')
 		}
 	]
 });
-
+router.beforeEach((to, from, next) => {
+	if (to.path !== '/my_portfolio') {
+		next({path: '/my_portfolio'});
+	} else {
+		next();
+	}
+});
 export default router;

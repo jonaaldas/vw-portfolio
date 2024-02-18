@@ -73,7 +73,7 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 	import Navbar from '../components/navbar.vue';
 </script>
 
